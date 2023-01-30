@@ -21,9 +21,7 @@ def evens(n):
     >>> evens(-1)
     []
     '''
-    return list(filter(lambda x: x >= 0, map(lambda x: x, range(n + 1)))
-
-
+    return list(filter(lambda x: x % 2 == 0, map(lambda x: x, range(n + 1))))
 def threes(n):
     '''
     Returns a list of all numbers from 0 to n inclusive that contain the digit 3.
@@ -74,7 +72,7 @@ def squares(n):
     >>> squares(10)
     [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     '''
-    return list(filter(lambda x: int(math.sqrt(x))**2 == x, map(lambda x: x, range(1, n + 1))))
+    return list(map(lambda x: x**2, filter(lambda x: True, range(1, n + 1))))
 
 def lengths(strings):
     '''
