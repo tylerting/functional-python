@@ -9,6 +9,7 @@ def evens(n):
     '''
     Returns a list of even numbers from 0 to n inclusive.
 
+
     >>> evens(10)
     [0, 2, 4, 6, 8, 10]
     >>> evens(11)
@@ -20,6 +21,7 @@ def evens(n):
     >>> evens(-1)
     []
     '''
+    return list(filter(lambda x: x >= 0, map(lambda x: x, range(n + 1)))
 
 
 def threes(n):
@@ -37,7 +39,7 @@ def threes(n):
     >>> threes(50)
     [3, 13, 23, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 43]
     '''
-
+    return list(filter(lambda x: '3' in str(x), map(lambda x: x, range(n + 1))))
 
 def small_words(text):
     '''
@@ -55,7 +57,8 @@ def small_words(text):
     >>> small_words('a big word is bad')
     ['a', 'big', 'word', 'is', 'bad']
     '''
-
+    words = text.split()
+    return list(filter(lambda x: len(x) < 5, map(lambda x: x, words)))
 
 def squares(n):
     '''
@@ -71,7 +74,7 @@ def squares(n):
     >>> squares(10)
     [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
     '''
-
+    return list(filter(lambda x: int(math.sqrt(x))**2 == x, map(lambda x: x, range(1, n + 1))))
 
 def lengths(strings):
     '''
@@ -84,3 +87,4 @@ def lengths(strings):
     >>> lengths(['this','is','a','test'])
     [4, 2, 1, 4]
     '''
+    return list(map(lambda x: len(x), strings))
